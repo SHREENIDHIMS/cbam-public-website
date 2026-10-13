@@ -1,0 +1,67 @@
+/* Print rules for result pages. Hides chrome, keeps the result, notices and links legible. */
+@media print {
+  header,
+  footer,
+  nav,
+  .no-print,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  main a[href^='/']::after,
+  main a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+    word-break: break-all;
+  }
+
+  .print-keep a::after {
+    content: none;
+  }
+
+  [data-print-card],
+  .box {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border-color: #000 !important;
+    background: #fff !important;
+  }
+
+  .btn {
+    box-shadow: none !important;
+  }
+
+  .stamp,
+  .tag {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  table {
+    font-size: 10pt;
+  }
+
+  tr {
+    break-inside: avoid;
+  }
+
+  [role='region'][tabindex] {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* Sticky headings and columns would overlap printed rows. */
+  [role='region'][tabindex] table * {
+    position: static !important;
+  }
+
+  details:not([open]) > :not(summary) {
+    display: none;
+  }
+}

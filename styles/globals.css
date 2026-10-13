@@ -1,0 +1,15 @@
+@layer theme, base, mantine, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+/* Tailwind preflight is intentionally NOT imported (it resets Mantine controls). */
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@import './tokens-theme.css';
+@import './base.css';
+@import './type.css';
+@import './elements.css';
+@import './prose.css';
+@import './marketing.css';
+@import './tools.css';
+@import './print.css';
+@import './header.css';

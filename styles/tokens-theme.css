@@ -1,0 +1,55 @@
+/* Maps the --cc-* variables (emitted by lib/design/css-variables.ts) into Tailwind utilities. */
+@theme inline {
+  --color-*: initial;
+  --color-white: #fff;
+  --color-transparent: transparent;
+  --color-current: currentcolor;
+
+  --color-canvas: var(--cc-canvas);
+  --color-surface: var(--cc-surface);
+  --color-surface-alt: var(--cc-surface-alt);
+  --color-inverse: var(--cc-surface-inverse);
+  --color-ink: var(--cc-ink);
+  --color-ink-muted: var(--cc-ink-muted);
+  --color-ink-subtle: var(--cc-ink-subtle);
+  --color-ink-inverse: var(--cc-ink-inverse);
+  --color-line: var(--cc-line);
+  --color-line-strong: var(--cc-line-strong);
+  --color-primary: var(--cc-primary);
+  --color-primary-hover: var(--cc-primary-hover);
+  --color-primary-tint: var(--cc-primary-tint);
+  --color-on-primary: var(--cc-on-primary);
+  --color-brand: var(--cc-brand);
+  --color-brand-hover: var(--cc-brand-hover);
+  --color-on-brand: var(--cc-on-brand);
+  --color-secondary: var(--cc-secondary);
+  --color-focus: var(--cc-focus);
+  --color-positive-fg: var(--cc-positive-fg);
+  --color-positive-bg: var(--cc-positive-bg);
+  --color-watch-fg: var(--cc-watch-fg);
+  --color-watch-bg: var(--cc-watch-bg);
+  --color-critical-fg: var(--cc-critical-fg);
+  --color-critical-bg: var(--cc-critical-bg);
+  --color-info-fg: var(--cc-info-fg);
+  --color-info-bg: var(--cc-info-bg);
+  --color-neutral-fg: var(--cc-neutral-fg);
+  --color-neutral-bg: var(--cc-neutral-bg);
+
+  --font-sans: var(--ff-sans), 'Segoe UI', system-ui, sans-serif;
+  --font-display: var(--ff-display), 'Arial Narrow', Arial, sans-serif;
+  --font-mono: var(--ff-mono), Consolas, ui-monospace, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 24px;
+  --radius-pill: 80px;
+
+  --shadow-sm: var(--cc-shadow-sm);
+  --shadow-md: var(--cc-shadow-md);
+
+  --ease-out: cubic-bezier(0.2, 0.7, 0.1, 1);
+
+  --container-site: 85rem;
+  --container-wide: 90rem;
+}

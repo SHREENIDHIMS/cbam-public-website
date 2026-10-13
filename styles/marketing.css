@@ -1,0 +1,216 @@
+/* Marketing page rules: entry motion, draw-ins, disclosure markers. */
+@layer components {
+  /*
+   * Entry motion ("settle"). Content is visible without JavaScript; RevealClient opts elements in.
+   * No vertical drift: the block resolves from a faint scale and opacity.
+   */
+  [data-reveal='pending'] {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  [data-reveal='in'] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--dur-3) var(--ease) var(--reveal-delay, 0ms),
+      transform var(--dur-3) var(--ease) var(--reveal-delay, 0ms);
+  }
+
+  /* Gauge arc draw-in. The final state is the resting state, so reduced motion shows it directly. */
+  .gauge-fill {
+    stroke-dasharray: var(--gauge-length);
+    stroke-dashoffset: var(--gauge-length);
+    animation: gauge-draw 1100ms var(--ease) 250ms forwards;
+  }
+  @keyframes gauge-draw {
+    to {
+      stroke-dashoffset: calc(var(--gauge-length) * (1 - var(--gauge-ratio)));
+    }
+  }
+
+  /* Bars grow from the left. */
+  .bar-grow {
+    transform-origin: left center;
+    animation: bar-grow 900ms var(--ease) 300ms both;
+  }
+  @keyframes bar-grow {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  /* The sample stamp lands once: a short press from slightly larger. */
+  .stamp-land {
+    animation: stamp-land var(--dur-2) var(--ease) 900ms both;
+  }
+  @keyframes stamp-land {
+    from {
+      transform: scale(1.15);
+    }
+  }
+
+  /* Goods-journey data lines draw once; the final state is the resting state. */
+  .journey-line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: journey-draw 1600ms var(--ease) forwards;
+  }
+  @keyframes journey-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Native FAQ disclosure marker. */
+  .faq-item > summary {
+    list-style: none;
+  }
+  .faq-item > summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  .faq-icon {
+    transition: transform var(--dur-1) var(--ease);
+  }
+}
+
+/* Motion kit (CargoFlow system): marquees, scroll words, pinned scene, hero tabs, accordion. */
+@layer components {
+  .marquee {
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-slide var(--marquee-seconds, 24s) linear infinite;
+  }
+  .marquee[data-direction='ltr'] .marquee-track {
+    animation-direction: reverse;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-group {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+  @keyframes marquee-slide {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      width: auto;
+      animation: none;
+    }
+    .marquee-group {
+      flex-wrap: wrap;
+    }
+    .marquee-group[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  /* Words go from grey to ink while the paragraph scrolls through (large text only: 3:1 grey). */
+  .scroll-words[data-live='true'] [data-w] {
+    color: var(--cc-line-strong);
+    transition: color var(--dur-2) var(--ease);
+  }
+  .scroll-words[data-live='true'] [data-w][data-on='true'] {
+    color: var(--cc-ink);
+  }
+
+  /* Pinned scene. Stacked and static by default; pinned when the script switches it on. */
+  .scene-stage {
+    position: relative;
+  }
+  [data-scene='on'].scene-track {
+    height: 420svh;
+  }
+  [data-scene='on'] .scene-stage {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    overflow: hidden;
+  }
+  [data-scene='on'] .scene-hook {
+    transform: translateY(calc(var(--p, 0) * 230px));
+  }
+  [data-scene='on'] .scene-step {
+    position: absolute;
+    max-width: 21rem;
+    opacity: clamp(0, calc((var(--p, 0) - var(--in)) * 9), 1);
+    transform: translateY(calc((1 - clamp(0, (var(--p, 0) - var(--in)) * 9, 1)) * 2rem));
+  }
+  [data-scene='on'] .scene-step[data-side='right'] {
+    right: var(--scene-gutter, 5%);
+  }
+  [data-scene='on'] .scene-step[data-side='left'] {
+    left: var(--scene-gutter, 5%);
+  }
+  [data-scene='on'] .scene-pile {
+    transform: translateY(calc((1 - var(--p, 0)) * 90px));
+  }
+
+  /* Hero tab progress: a thin bar that fills while a tab is active. */
+  .tab-progress[aria-pressed='true']::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 2px;
+    background: var(--cc-brand);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: tab-fill var(--tab-seconds, 6s) linear forwards;
+  }
+  @keyframes tab-fill {
+    to {
+      transform: scaleX(1);
+    }
+  }
+  [data-paused='true'] .tab-progress::after {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tab-progress[aria-pressed='true']::after {
+      animation: none;
+      transform: scaleX(1);
+    }
+  }
+
+  /* Accordion panel: height eases open without measuring. */
+  .acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--dur-3) var(--ease);
+  }
+  .acc-panel[data-open='true'] {
+    grid-template-rows: 1fr;
+  }
+  .acc-panel > div {
+    overflow: hidden;
+  }
+
+  [data-scene='on'] .scene-art {
+    position: absolute;
+    inset: 0;
+  }
+  [data-scene='on'] .scene-steps {
+    position: absolute;
+    inset: 0;
+  }
+  [data-scene='on'] .scene-step {
+    top: var(--top);
+  }
+
+  /* On orange sections the eyebrow tick takes the ink colour (orange on orange would vanish). */
+  [data-tone='brand'] .t-eyebrow::before {
+    background: var(--cc-ink);
+  }
+}

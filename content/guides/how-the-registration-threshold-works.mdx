@@ -1,0 +1,100 @@
+---
+title: 'How the registration threshold tests work'
+summary: 'The look-back and forward-looking tests, which imports may not count, and how to work out when you would need to register.'
+slug: how-the-registration-threshold-works
+sectors: [aluminium, cement, fertilisers, hydrogen, iron_steel]
+topic: threshold
+tags: [threshold, registration, look-back, forward-looking, exclusions]
+reviewedAt: '2026-10-06'
+rulesBasis: public-rules-2026-10-06
+featured: true
+featuredRank: 2
+readingMinutes: 6
+keyFacts:
+  - label: Registration threshold
+    rule: registrationThreshold
+  - label: Look-back window
+    rule: registrationThresholdPeriod
+  - label: Forward-looking window
+    text: The next 30 days, tested on any day
+  - label: Registration deadline in the first year
+    rule: registrationDeadline
+related: [what-is-uk-cbam, commodity-codes-and-scope, supplier-emissions-data]
+sources:
+  - title: 'Work out the date you will need to register for Carbon Border Adjustment Mechanism (CBAM)'
+    url: 'https://www.gov.uk/guidance/work-out-the-date-youll-need-to-register-for-carbon-border-adjustment-mechanism-cbam'
+    accessedAt: '2026-10-06'
+  - title: 'Imported Carbon Border Adjustment (CBAM) goods that may not contribute towards the registration threshold'
+    url: 'https://www.gov.uk/guidance/imported-carbon-border-adjustment-cbam-goods-that-may-not-contribute-towards-the-registration-threshold'
+    accessedAt: '2026-10-06'
+  - title: 'Carbon Border Adjustment Mechanism (CBAM): Policy summary'
+    url: 'https://www.gov.uk/government/publications/carbon-border-adjustment-mechanism-cbam-policy-summary/carbon-border-adjustment-mechanism-cbam-policy-summary'
+    accessedAt: '2026-10-06'
+---
+
+Importers do not have to register for CBAM straight away. You become liable to register when the value of the CBAM goods you import reaches the registration threshold, which is <Rule k="registrationThreshold" />. HMRC describes two separate tests. Either one can make you liable, and you do not need to pass both.
+
+## The two tests
+
+<DataTable
+  caption="The two registration tests"
+  head={['Test', 'What it looks at', 'When you apply it']}
+  rows={[
+    [
+      'Look-back test',
+      'CBAM goods imported in the previous 12 months',
+      'On the first day of each month',
+    ],
+    ['Forward-looking test', 'CBAM goods you expect to import in the next 30 days', 'Any day'],
+  ]}
+/>
+
+### The look-back test
+
+From the start date, <Rule k="startDate" />, check on the first day of each month whether you imported CBAM goods worth the threshold or more in the previous 12 months. If you did, you become liable to register from the date your imports reached the threshold.
+
+HMRC is explicit that you do not include the value of CBAM goods imported before the start date. Early in the scheme the look-back window therefore holds fewer than 12 months of imports.
+
+### The forward-looking test
+
+You must also register if you expect to import CBAM goods worth the threshold or more within the next 30 days. This test matters for importers with large, irregular shipments. A single planned shipment can make you liable before the look-back test would show anything.
+
+### When both apply
+
+If both conditions are met, HMRC says to use the earliest date you became liable as your registration start date.
+
+## How long you have to register
+
+Ordinarily a liable person has 30 days from the day they become liable to register. In the first calendar year of CBAM, businesses have until <Rule k="registrationDeadline" />. Penalties may apply for failing to register or for registering late, so it is worth working out your date early rather than at the deadline.
+
+## Imports that may not count
+
+HMRC lists categories of imported CBAM goods that may not contribute towards the threshold:
+
+- goods imported for private use, such as cement for building a house or an aluminium roof on a home;
+- goods of UK origin, even if they are brought back from another country;
+- goods eligible for returned goods relief;
+- goods imported under temporary admission with full relief from customs duties;
+- goods under certain special customs procedures, such as inward processing, outward processing, freeport customs sites, authorised use and customs warehousing, subject to conditions.
+
+Each category has conditions, and your own entries need to meet them. Keep the evidence for any import you leave out of your total. The guide on [commodity codes and scope](/guides/commodity-codes-and-scope) covers the earlier question of whether a good is a CBAM good at all.
+
+## Working through it
+
+A simple way to apply the tests to your own records:
+
+1. Start from your customs entries and keep only lines whose commodity code is a CBAM good.
+2. Remove lines imported before the start date, and lines that fall into one of the categories above.
+3. Add up the customs value of what is left over the previous 12 months. That is your look-back figure.
+4. Look at what you expect to import over the next 30 days. That is your forward-looking figure.
+5. Compare each with the threshold. If either reaches it, work out the date you became liable.
+
+<Callout tone="caution" title="Close to the line">
+
+Values just under the threshold deserve a second look. A late entry, a correction to a customs value or a shipment you had not planned for can move you across it. This site shows guidance bands for how close you are, but those bands are product guidance and not a statutory value.
+
+</Callout>
+
+## Trying it on your own figures
+
+The [threshold checker](/threshold-checker) shows both views side by side from two simple numbers. If you have a customs export, the [liability preview](/liability-preview) reads it in your browser and shows how the in-scope total sits against the threshold. Both are indicative and based on the information you provide.

@@ -1,0 +1,113 @@
+/*
+ * Four named type tiers (DECISIONS 37). Headings use one of these classes and never set their own
+ * size. Archivo carries display and labels; Atkinson Hyperlegible Next is the body; the mono is
+ * for figures only.
+ */
+@layer components {
+  .t-display,
+  .t-chapter,
+  .t-title,
+  .t-label,
+  .t-figure-lg {
+    font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif;
+    color: var(--cc-ink);
+  }
+
+  .t-display,
+  .t-chapter,
+  .t-title {
+    text-wrap: balance;
+  }
+
+  /* Page and home headline (80 px on desktop, one weight: Medium). */
+  .t-display {
+    font-size: clamp(2.75rem, 1.6rem + 4.6vw, 5rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Oversized one-word section markers (CargoFlow "LOGISTIC"), decorative. */
+  .t-giant {
+    font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(4rem, 1rem + 15vw, 12rem);
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Every section heading and every interior page title (48 px). */
+  .t-chapter {
+    font-size: clamp(2rem, 1.3rem + 2.4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Box titles, card titles, result headlines (28 px). */
+  .t-title {
+    font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  /* Box labels, table heads, field names. A label names content; it never sits above a heading. */
+  .t-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Section eyebrow: small caps label with a leading orange tick. */
+  .t-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cc-ink);
+  }
+
+  .t-eyebrow::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--cc-brand);
+  }
+
+  .t-lead {
+    max-width: 60ch;
+    color: var(--cc-ink-muted);
+    font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  /* Money, mass, dates, commodity codes, counts. */
+  .t-figure {
+    font-family: var(--ff-mono), Consolas, ui-monospace, monospace;
+    font-variant-numeric: tabular-nums slashed-zero;
+    letter-spacing: -0.01em;
+  }
+
+  /* A large figure inside a box (liability, threshold value). */
+  .t-figure-lg {
+    font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .t-body {
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+}

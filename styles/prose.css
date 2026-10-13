@@ -1,0 +1,68 @@
+@layer components {
+  .prose-cc {
+    max-width: 68ch;
+    color: var(--cc-ink-muted);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .prose-cc > * + * {
+    margin-top: 1.25em;
+  }
+
+  .prose-cc h2,
+  .prose-cc h3 {
+    color: var(--cc-ink);
+    font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif;
+    text-wrap: balance;
+  }
+
+  /* Same values as the .t-title tier, opened by a hairline like a new box on the form. */
+  .prose-cc h2 {
+    font-size: clamp(1.25rem, 1.08rem + 0.7vw, 1.625rem);
+    font-weight: 680;
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    margin-top: 2.25em;
+    padding-top: 0.75em;
+    border-top: 1px solid var(--cc-line);
+  }
+
+  .prose-cc h3 {
+    font-size: 1.125rem;
+    font-weight: 680;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-top: 2em;
+  }
+
+  .prose-cc h2 + *,
+  .prose-cc h3 + * {
+    margin-top: 0.75em;
+  }
+
+  .prose-cc strong {
+    color: var(--cc-ink);
+    font-weight: 600;
+  }
+
+  .prose-cc li + li {
+    margin-top: 0.4em;
+  }
+
+  .prose-cc a:hover {
+    color: var(--cc-primary-hover);
+  }
+
+  .prose-cc a {
+    color: var(--cc-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  .prose-cc ul,
+  .prose-cc ol {
+    padding-left: 1.4em;
+  }
+}

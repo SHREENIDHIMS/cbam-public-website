@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T00:00:00Z",
+  "title": "Design System: UK CBAM Public Website",
+  "extensions": {
+    "colorMeta": {
+      "canvas": { "role": "neutral", "displayName": "Zinc-White Paper", "canonical": "oklch(96.5% 0.008 255)", "tonalRamp": ["#231521", "#554857", "#706472", "#818693", "#999EAB", "#B3B7C3", "#CDD1DB", "#E3E8F0", "#F0F4F9", "#FAFCFE"] },
+      "surface": { "role": "neutral", "displayName": "Clean Sheet", "canonical": "oklch(99% 0.003 255)", "tonalRamp": ["#231521", "#554857", "#706472", "#818693", "#999EAB", "#B3B7C3", "#CDD1DB", "#E3E8F0", "#F0F4F9", "#FAFCFE"] },
+      "surface-alt": { "role": "neutral", "displayName": "Pale Zinc Band", "canonical": "oklch(93% 0.012 255)", "tonalRamp": ["#231521", "#554857", "#706472", "#818693", "#999EAB", "#B3B7C3", "#CDD1DB", "#E3E8F0", "#F0F4F9", "#FAFCFE"] },
+      "surface-inverse": { "role": "primary", "displayName": "Deep Aubergine Ground", "canonical": "oklch(27% 0.07 335)", "tonalRamp": ["#3A1734", "#4A1541", "#5E2154", "#6B2B60", "#7C376F", "#98518A", "#B87AAB", "#D4A7C9", "#EBCDE3", "#F6E5F2"] },
+      "ink": { "role": "neutral", "displayName": "Aubergine-Black Ink", "canonical": "oklch(22% 0.03 330)", "tonalRamp": ["#231521", "#554857", "#706472", "#818693", "#999EAB", "#B3B7C3", "#CDD1DB", "#E3E8F0", "#F0F4F9", "#FAFCFE"] },
+      "ink-muted": { "role": "neutral", "displayName": "Faded Ink", "canonical": "oklch(42% 0.03 320)" },
+      "ink-subtle": { "role": "neutral", "displayName": "Pencil Grey-Plum", "canonical": "oklch(52% 0.025 320)" },
+      "line": { "role": "neutral", "displayName": "Hairline Zinc", "canonical": "oklch(86% 0.012 260)" },
+      "line-strong": { "role": "neutral", "displayName": "Control Zinc", "canonical": "oklch(62% 0.02 265)" },
+      "primary": { "role": "primary", "displayName": "Stamp-Ink Aubergine", "canonical": "oklch(36% 0.1 335)", "tonalRamp": ["#3A1734", "#4A1541", "#5E2154", "#6B2B60", "#7C376F", "#98518A", "#B87AAB", "#D4A7C9", "#EBCDE3", "#F6E5F2"] },
+      "primary-hover": { "role": "primary", "displayName": "Pressed Aubergine", "canonical": "oklch(30% 0.1 335)" },
+      "primary-tint": { "role": "primary", "displayName": "Aubergine Wash", "canonical": "oklch(94% 0.03 335)" },
+      "on-primary": { "role": "neutral", "displayName": "Clean Sheet on Ink" },
+      "secondary": { "role": "secondary", "displayName": "Galvanised Steel", "canonical": "oklch(47% 0.06 250)", "tonalRamp": ["#203140", "#2E4557", "#3C586E", "#4A6B85", "#5C7C9A", "#7592AE", "#95ADC3", "#B9C9D8", "#DCE4EC", "#EEF2F6"] },
+      "inverse-ink-muted": { "role": "neutral", "displayName": "Pale Plum (inverse muted ink)" },
+      "inverse-line": { "role": "neutral", "displayName": "Mid Plum (inverse line)" },
+      "positive-fg": { "role": "status", "displayName": "Ledger Green", "tonalRamp": ["#173828", "#214D37", "#2B6246", "#357553", "#458B63", "#5FA47B", "#84BC9A", "#ADD3BC", "#D6E9DD", "#EDF5F0"] },
+      "positive-bg": { "role": "status", "displayName": "Green Wash" },
+      "watch-fg": { "role": "status", "displayName": "Customs Amber", "tonalRamp": ["#4A3307", "#6E4C08", "#855C0A", "#A6730C", "#C98E16", "#E2A82E", "#EDBF57", "#F4D68E", "#FAEBC6", "#FDF6E7"] },
+      "watch-bg": { "role": "status", "displayName": "Amber Wash" },
+      "critical-fg": { "role": "status", "displayName": "Correction Red", "tonalRamp": ["#4F1916", "#6B221E", "#872B26", "#A3362F", "#BC463F", "#CE635C", "#DD8A84", "#EAB2AE", "#F5D9D7", "#FBEFEE"] },
+      "critical-bg": { "role": "status", "displayName": "Red Wash" },
+      "info-fg": { "role": "status", "displayName": "Steel Note" },
+      "info-bg": { "role": "status", "displayName": "Steel Wash" },
+      "neutral-fg": { "role": "status", "displayName": "Neutral Ink" },
+      "neutral-bg": { "role": "status", "displayName": "Neutral Zinc" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home headline and closing call to action only." },
+      "headline": { "displayName": "Chapter", "purpose": "Every section heading and every interior page title." },
+      "title": { "displayName": "Title", "purpose": "Box titles, card titles, result headlines." },
+      "lead": { "displayName": "Lead", "purpose": "Paragraph under a chapter heading; max 60ch, faded ink." },
+      "body": { "displayName": "Body", "purpose": "Running copy; max 64ch." },
+      "caption": { "displayName": "Caption", "purpose": "Meta lines, footer snapshot data, small notes in boxes." },
+      "label": { "displayName": "Label", "purpose": "Uppercase box heads, table heads, field-group names. Never an eyebrow above a heading." },
+      "figure": { "displayName": "Figure", "purpose": "Money, mass, dates, codes and counts; mono, tabular, slashed zero." },
+      "figure-lg": { "displayName": "Large Figure", "purpose": "The single large value inside a box." }
+    },
+    "shadows": [
+      { "name": "underprint", "value": "3px 3px 0 0 color-mix(in oklab, var(--cc-ink) 30%, transparent)", "purpose": "Hard offset behind buttons at rest; shrinks to 1px on hover and 0 on active as the button presses in." },
+      { "name": "panel-lift", "value": "0 1px 2px rgb(35 21 33 / 0.06)", "purpose": "Tool input panels, result boxes, filter boxes, open workings rows." },
+      { "name": "hover-lift", "value": "0 10px 30px -18px rgb(35 21 33 / 0.35)", "purpose": "Hover and focus-within of a whole-box guide link; liability preview tool frame." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.2, 0.7, 0.1, 1)", "purpose": "The one easing curve for every transition and animation." },
+      { "name": "dur-1", "value": "160ms", "purpose": "State changes: button press, colour, disclosure icon." },
+      { "name": "dur-2", "value": "320ms", "purpose": "The hero sample stamp landing." },
+      { "name": "dur-3", "value": "560ms", "purpose": "Settle reveal: opacity plus scale from 0.985, no vertical drift." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ],
+    "containers": [
+      { "name": "site", "value": "77.5rem" },
+      { "name": "wide", "value": "90rem" }
+    ],
+    "focus": { "value": "outline: 2px solid var(--cc-focus); outline-offset: 3px", "purpose": "Global focus ring; ink on paper, light zinc in dark sections." }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single action colour; presses into its underprint on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Check my exposure</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; border: 1.5px solid transparent; border-radius: 3px; font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif; font-size: 1rem; font-weight: 650; word-spacing: 0.05em; text-decoration: none; cursor: pointer; box-shadow: 3px 3px 0 0 color-mix(in oklab, #231521 30%, transparent); transition: transform 160ms cubic-bezier(0.2, 0.7, 0.1, 1), box-shadow 160ms cubic-bezier(0.2, 0.7, 0.1, 1), background-color 160ms cubic-bezier(0.2, 0.7, 0.1, 1); } .ds-btn:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 0 color-mix(in oklab, #231521 30%, transparent); } .ds-btn:active { transform: translate(3px, 3px); box-shadow: none; } .ds-btn:focus-visible { outline: 2px solid #231521; outline-offset: 3px; } .ds-btn-primary { background: #5E2154; color: #FAFCFE; } .ds-btn-primary:hover { background: #4A1541; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ink-outlined alternative action with a hairline underprint.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">See how it works</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.5rem 1.125rem; border: 1.5px solid #231521; border-radius: 3px; background: transparent; color: #231521; font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif; font-size: 1rem; font-weight: 650; text-decoration: none; box-shadow: 3px 3px 0 0 #CDD1DB; transition: transform 160ms cubic-bezier(0.2, 0.7, 0.1, 1), box-shadow 160ms cubic-bezier(0.2, 0.7, 0.1, 1), background-color 160ms cubic-bezier(0.2, 0.7, 0.1, 1); } .ds-btn-secondary:hover { background: #F6E5F2; transform: translate(2px, 2px); box-shadow: 1px 1px 0 0 #CDD1DB; } .ds-btn-secondary:active { transform: translate(3px, 3px); box-shadow: none; } .ds-btn-secondary:focus-visible { outline: 2px solid #231521; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Underlined aubergine text action with no underprint.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Read the guide</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.5rem 1.125rem; border-radius: 3px; color: #5E2154; font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif; font-weight: 650; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; } .ds-btn-ghost:hover { text-decoration-thickness: 2px; } .ds-btn-ghost:focus-visible { outline: 2px solid #231521; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "48px field with 6px corners and a control-zinc border.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Annual import mass (tonnes)</span><input class=\"ds-input\" placeholder=\"e.g. 1,200\" /></label>",
+      "css": ".ds-field { display: block; font-family: var(--ff-sans), 'Segoe UI', system-ui, sans-serif; } .ds-field-label { display: block; margin-bottom: 0.25rem; font-weight: 600; color: #231521; } .ds-input { width: 100%; height: 3rem; padding: 0 0.75rem; border: 1px solid #818693; border-radius: 6px; background: #FAFCFE; color: #231521; font-size: 1rem; transition: border-color 150ms; } .ds-input::placeholder { color: #706472; } .ds-input:hover { border-color: #231521; } .ds-input:focus-visible { outline: 2px solid #231521; outline-offset: 3px; }"
+    },
+    {
+      "name": "Labelled Box",
+      "kind": "card",
+      "refersTo": "box",
+      "description": "The primary container: a declaration box with an uppercase label head.",
+      "html": "<div class=\"ds-box\"><div class=\"ds-box-head\"><span>Indicative liability</span><span class=\"ds-stamp\">Sample</span></div><div class=\"ds-box-body\"><div class=\"ds-figure-lg\">£41,250</div></div></div>",
+      "css": ".ds-box { border: 1px solid #CDD1DB; border-radius: 3px; background: #FAFCFE; color: #231521; } .ds-box-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; padding: 0.625rem 1.5rem; border-bottom: 1px solid #CDD1DB; color: #706472; font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif; font-size: 0.75rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; } .ds-box-body { padding: 1.25rem 1.5rem; } .ds-figure-lg { font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif; font-size: 2.5rem; font-weight: 750; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; } .ds-stamp { display: inline-flex; padding: 0.1875rem 0.5rem; border: 1.5px solid #5E2154; border-radius: 2px; outline: 1px solid #5E2154; outline-offset: 1.5px; color: #5E2154; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; }"
+    },
+    {
+      "name": "Ledger",
+      "kind": "custom",
+      "refersTo": "ledger",
+      "description": "Ruled list: 2px ink top rule, hairline rows, mono figures.",
+      "html": "<ul class=\"ds-ledger\"><li><span>Atlas Metals</span><span class=\"ds-figure\">£3,588</span></li><li><span>Meridian Alloy Works</span><span class=\"ds-figure\">£4,234</span></li><li><span>North Channel Materials</span><span class=\"ds-figure\">£2,104</span></li></ul>",
+      "css": ".ds-ledger { list-style: none; margin: 0; padding: 0; border-top: 2px solid #231521; border-bottom: 1px solid #CDD1DB; color: #231521; font-family: var(--ff-sans), 'Segoe UI', system-ui, sans-serif; } .ds-ledger > li { display: flex; justify-content: space-between; padding: 0.75rem 0.25rem; } .ds-ledger > li + li { border-top: 1px solid #CDD1DB; } .ds-ledger > li:nth-child(even) { background: color-mix(in oklab, #E3E8F0 60%, transparent); } .ds-figure { font-family: var(--ff-mono), Consolas, ui-monospace, monospace; font-variant-numeric: tabular-nums slashed-zero; letter-spacing: -0.01em; }"
+    },
+    {
+      "name": "Provenance Stamp",
+      "kind": "chip",
+      "refersTo": "stamp",
+      "description": "Double-ruled ink stamp marking where a value came from.",
+      "html": "<span class=\"ds-stamp-tone\">Supplier actual</span> <span class=\"ds-stamp-tone ds-stamp-tilt\">Sample</span>",
+      "css": ".ds-stamp-tone { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.1875rem 0.5rem; border: 1.5px solid currentColor; border-radius: 2px; outline: 1px solid currentColor; outline-offset: 1.5px; background: #EDF5F0; color: #2B6246; font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif; font-size: 0.6875rem; font-weight: 700; line-height: 1.3; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; } .ds-stamp-tilt { background: #F0F4F9; color: #5E2154; transform: rotate(-4deg); }"
+    },
+    {
+      "name": "Status Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Flat status label; always icon plus text.",
+      "html": "<span class=\"ds-tag\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/><path d=\"M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z\"/></svg>Approaching threshold</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.25rem 0.5rem; border-radius: 2px; background: #FDF6E7; color: #6E4C08; font-family: var(--ff-sans), 'Segoe UI', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; line-height: 1.25; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "link",
+      "description": "Sticky 64px paper header with muted links and the primary action.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">How it works</a><a class=\"ds-nav-link\" href=\"#\">Guides</a><a class=\"ds-nav-link\" href=\"#\">Pricing</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 0.25rem; height: 4rem; padding: 0 2.5rem; background: #F0F4F9; border-bottom: 1px solid #CDD1DB; font-family: var(--ff-sans), 'Segoe UI', system-ui, sans-serif; } .ds-nav-link { padding: 0.5rem 0.625rem; border-radius: 2px; color: #554857; font-size: 0.9375rem; text-decoration: none; text-decoration-thickness: 1px; text-underline-offset: 0.35em; } .ds-nav-link:hover { color: #231521; text-decoration: underline; } .ds-nav-link:focus-visible { outline: 2px solid #231521; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Carbon Copy",
+    "overview": "The site is laid out like the artefact it helps an importer produce: a customs declaration. Content sits in labelled boxes on cool zinc-white paper, lists are ruled ledgers closed by a heavy ink rule, figures run in a mono column with tabular digits, and the provenance of every value is marked with a double-ruled ink stamp. Aubergine stamp ink carries action and fills the dark sections and footer; everything else is paper, ink and hairlines.\n\nDensity is form-like rather than airy-marketing: boxes are tight (3px corners, 1px hairline borders, uppercase Archivo labels in a head strip), while chapters are separated by one generous vertical rhythm. Depth is printed, not floated: buttons sit off a hard offset underprint and press into register on hover. Motion is a quiet \"settle\" (opacity and a 1.5% scale, no vertical drift), plus a single stamp that lands once on the hero sample.\n\nThe world deliberately rejects the category default it replaced: gradient heroes, icon-card grids (\"heading plus three cards\"), rounded dashboard islands, pill badges, dashed eyebrows above every heading, ghost numerals and grid textures.",
+    "keyCharacteristics": [
+      "Zinc-white paper ground with aubergine stamp ink as the single action colour.",
+      "Labelled boxes (3px radius, hairline border, uppercase label head) as the primary container.",
+      "Ledgers: 2px ink top rule, hairlines between rows.",
+      "Archivo display and labels, Atkinson Hyperlegible Next body, Atkinson Hyperlegible Mono for figures only.",
+      "Buttons with a hard offset underprint that press in on hover.",
+      "Dark sections re-point role colours via a tone attribute; components never change."
+    ],
+    "rules": [
+      { "name": "The Tone Re-point Rule", "body": "Dark sections are made with `data-tone=\"inverse\"`, which re-points the role variables (ink becomes the light zinc, muted ink the pale plum, lines the mid plum, primary a light plum chip with dark text, focus the light zinc). A paper box inside a dark section restores light roles with `data-tone=\"paper\"`. Never darken a section by hand-picking light text colours or opacity utilities.", "section": "colors" },
+      { "name": "The One Ink Rule", "body": "Aubergine is the only colour that means \"act\". Status colours describe results; steel encodes data. Neither is ever used for a call to action.", "section": "colors" },
+      { "name": "The Paired Contrast Rule", "body": "Every foreground/background pairing in use is listed in the token file's contrast pairs and tested (text 4.5:1, control borders and focus 3:1). A new pairing is added to that list before it ships.", "section": "colors" },
+      { "name": "The Four Tiers Rule", "body": "A heading takes one of the tier classes (display, chapter, title, label) and never sets its own size.", "section": "typography" },
+      { "name": "The Label Names Content Rule", "body": "A label names the content of a box or column. It never sits above a heading as an eyebrow.", "section": "typography" },
+      { "name": "The Figures Are Typed Rule", "body": "Any quantity a user could copy onto a declaration (money, tonnes, dates, CN codes) is set in the mono figure face with tabular numerals. Prose numbers are not.", "section": "typography" },
+      { "name": "The Press-Into-Register Rule", "body": "Interactive press feedback is a translation toward the underprint, never a raised lift or a glow. Ghost buttons and text links have no underprint; their hover thickens the underline from 1px to 2px.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** put content in labelled boxes (3px, hairline, uppercase label head) and lists in ledgers (2px ink top rule, hairline rows).",
+      "**Do** set every money, mass, date and code value in the mono figure face with tabular numerals.",
+      "**Do** make dark sections with the inverse tone attribute and let the role variables flip; use the paper tone for a light box inside them.",
+      "**Do** keep aubergine as the only action colour, and show status with icon, text and tone together.",
+      "**Do** use one curve (`cubic-bezier(0.2, 0.7, 0.1, 1)`) and the three durations (160ms state, 320ms stamp, 560ms reveal); honour reduced motion.",
+      "**Do** use the one shared section gap for every chapter."
+    ],
+    "donts": [
+      "**Don't** place an eyebrow label above a heading; labels name box and column content only.",
+      "**Don't** build \"heading plus three icon cards\" grids; use a ledger or a single divided box.",
+      "**Don't** use pill badges or 12px-plus rounded cards; corners stop at 6px (radio indicators excepted).",
+      "**Don't** use gradient heroes, grid textures, ghost numerals or decorative italic display phrases.",
+      "**Don't** lift buttons with soft shadows or glows; they press into their underprint.",
+      "**Don't** tilt more than one stamp per artefact, and reserve the tilt for \"Sample\" or the 404 stamp.",
+      "**Don't** use vertical slide-in entry motion; reveals settle in place.",
+      "**Don't** set a heading's size directly; pick a type tier."
+    ]
+  }
+}

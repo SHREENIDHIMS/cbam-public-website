@@ -1,0 +1,17 @@
+/*
+ * Unlayered on purpose: it must beat the utility classes on the header. Pages that open with a
+ * full-bleed hero (marked data-hero) get a transparent header with white ink until the page
+ * scrolls, as on the reference site.
+ */
+body:has([data-hero]) #site-header[data-scrolled='false'] {
+  background-color: transparent;
+  --cc-ink: #fff;
+  --cc-ink-muted: rgb(255 255 255 / 0.85);
+  --cc-line-strong: rgb(255 255 255 / 0.45);
+  --cc-primary: #fff;
+}
+
+#site-header[data-scrolled='true'] {
+  background-color: rgb(250 250 250 / 0.92);
+  backdrop-filter: blur(12px);
+}

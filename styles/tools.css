@@ -1,0 +1,71 @@
+/* Interactive tool rules: live gauge, print behaviour hooks. */
+@layer components {
+  /* The fill resolves to its resting state; it eases between values as inputs change. */
+  .gauge-live {
+    stroke-dasharray: var(--gauge-length);
+    stroke-dashoffset: calc(var(--gauge-length) * (1 - var(--gauge-fraction)));
+    transition: stroke-dashoffset var(--dur-2) var(--ease);
+  }
+}
+
+/* Mantine's default dimmed description colour fails contrast on the canvas; use the muted ink token. */
+@layer components {
+  .mantine-InputWrapper-description,
+  .mantine-Checkbox-description,
+  .mantine-Radio-description {
+    color: var(--cc-ink-muted);
+  }
+}
+
+/* A table that reads as a stack of cards below md. Cells carry their label in data-label. */
+@layer components {
+  @media (max-width: 47.99rem) {
+    .stack-table,
+    .stack-table tbody,
+    .stack-table tr,
+    .stack-table th,
+    .stack-table td {
+      display: block;
+    }
+
+    .stack-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+
+    .stack-table tbody tr {
+      margin-bottom: 0.75rem;
+      padding: 0.25rem 1rem;
+      border: 1px solid var(--cc-line);
+      border-radius: 3px;
+      background: var(--cc-surface);
+    }
+
+    .stack-table tbody th,
+    .stack-table tbody td {
+      padding: 0.5rem 0;
+    }
+
+    .stack-table [data-label]::before {
+      content: attr(data-label);
+      display: block;
+      margin-bottom: 0.125rem;
+      font-family: var(--ff-display), 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 650;
+      color: var(--cc-ink-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+  }
+}
+
+/* Mantine sets the body to its own white on the routes that load it; keep the site ground. */
+@layer components {
+  body {
+    background-color: var(--cc-canvas);
+  }
+}

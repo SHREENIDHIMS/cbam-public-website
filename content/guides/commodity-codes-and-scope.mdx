@@ -1,0 +1,80 @@
+---
+title: 'Commodity codes and scope: why the exact code matters'
+summary: 'CBAM applies to specific goods identified by commodity code, not to broad product labels. How to check your lines.'
+slug: commodity-codes-and-scope
+sectors: [aluminium, cement, fertilisers, hydrogen, iron_steel]
+topic: scope
+tags: [commodity codes, scope, customs, ledger, sectors]
+reviewedAt: '2026-10-06'
+rulesBasis: public-rules-2026-10-06
+readingMinutes: 5
+keyFacts:
+  - label: Sectors in scope
+    rule: sectorList
+  - label: How scope is decided
+    text: By commodity code, as listed in the legislation
+  - label: Code length HMRC asks you to record
+    text: 8-digit commodity code, with a description
+related: [what-is-uk-cbam, how-the-registration-threshold-works, supplier-emissions-data]
+sources:
+  - title: 'Check which goods are in scope of Carbon Border Adjustment Mechanism (CBAM)'
+    url: 'https://www.gov.uk/government/publications/check-which-goods-are-in-scope-of-carbon-border-adjustment-mechanism-cbam'
+    accessedAt: '2026-10-06'
+  - title: 'Finance Act 2026, Part 5: Carbon Border Adjustment Mechanism'
+    url: 'https://www.legislation.gov.uk/ukpga/2026/11/part/5/enacted'
+    accessedAt: '2026-10-06'
+  - title: 'Keeping records for Carbon Border Adjustment Mechanism (CBAM)'
+    url: 'https://www.gov.uk/guidance/keeping-records-for-carbon-border-adjustment-mechanism-cbam'
+    accessedAt: '2026-10-06'
+  - title: 'Carbon Border Adjustment Mechanism (CBAM): Policy summary'
+    url: 'https://www.gov.uk/government/publications/carbon-border-adjustment-mechanism-cbam-policy-summary/carbon-border-adjustment-mechanism-cbam-policy-summary'
+    accessedAt: '2026-10-06'
+---
+
+"Steel", "aluminium" and "cement" are useful ways to talk about a sector, but they are not how CBAM decides whether an import is in scope. The legislation identifies CBAM goods by commodity code. Two products that look similar can sit on different sides of the line, and a product that does not sound like a heavy industrial good can still be caught.
+
+## Sectors and goods are different things
+
+The Finance Act 2026 names five groups: aluminium goods, cement, fertilisers, hydrogen, and iron and steel goods. On this site they appear as <Rule k="sectorList" />. The Act then specifies the goods in a schedule, organised by commodity code, and the Treasury can change that list by regulations.
+
+The policy summary puts it plainly: within these sectors, CBAM applies only to specific CBAM goods, and those goods are identified by the commodity codes listed in the annex. HMRC's own guidance for importers says to check which of the goods you import are in scope by checking their commodity codes.
+
+<Callout title="The exact code decides">
+
+Do not rely on a product name, a supplier's description or a sector label. Check the commodity code on each line against the published list.
+
+</Callout>
+
+## Where the code comes from
+
+Your customs entry carries a commodity code for every line. HMRC's record-keeping guidance asks you to keep the 8-digit commodity code and a description for each import, together with the date the goods passed their tax point, their value and their net weight.
+
+Ledgers and exports do not always record the code in the same way. Common differences are:
+
+- codes stored as numbers, so a leading zero disappears;
+- codes written with dots or spaces, such as a heading followed by sub-headings;
+- codes longer than eight digits, because your system holds an extended version;
+- codes that are blank or typed by hand, with typos.
+
+Before you test scope, make your ledger consistent. The [liability preview](/liability-preview) tidies common formatting differences in the browser and shows you each change, but it does not decide scope for you.
+
+## A practical way to check
+
+1. Export your import lines with the commodity code, description, net mass, customs value and import date.
+2. Standardise the codes so every line has the same format.
+3. Compare each code with HMRC's published goods lists for the five sectors. HMRC provides a list for each sector.
+4. Mark each line as in scope, out of scope or unsure. Treat unsure as a question to resolve, not as a no.
+5. Keep a note of how you decided, because you may need to explain it later.
+
+## Edge cases worth a second look
+
+- **Mixed shipments.** A single entry can include lines in scope and lines outside it. Split them by line.
+- **Similar products.** Fasteners, tubes, wire and finished articles may look related to a sector but have their own codes. Check each code rather than assuming.
+- **Scrap and by-products.** These may sit under different codes from the material they come from, so check their status on the list instead of assuming it from the material.
+- **Changes over time.** The Treasury can modify the list of goods by regulations. A line that was out of scope when you last checked may need checking again.
+
+## What this site does and does not do
+
+The public tools on this site use commodity codes to sort lines in an indicative preview. In this demonstration the sector assignment for the sample files is fixed, and the site does not resolve scope from the legislation. Treat it as a way to see how a result would look, and confirm scope from the official lists.
+
+A line that is out of scope still has a place in your records. It is simply not part of the CBAM position. Once scope is settled, the next questions are [how the threshold applies](/guides/how-the-registration-threshold-works) and [which emissions data you will need](/guides/supplier-emissions-data).

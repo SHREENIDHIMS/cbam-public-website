@@ -1,0 +1,101 @@
+@layer base {
+  /* The reset the Mantine baseline used to provide on every page; content pages no longer load it. */
+  :root {
+    color-scheme: light;
+    /* Motion constants: one curve, three duration bands (DECISIONS 37). */
+    --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+    --dur-1: 160ms;
+    --dur-2: 320ms;
+    --dur-3: 560ms;
+    /* One vertical rhythm for every chapter. */
+    --section-gap: clamp(5rem, 3rem + 6vw, 7.5rem);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    background-color: var(--cc-canvas);
+    color: var(--cc-ink);
+    font-family: var(--ff-sans), 'Segoe UI', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cc-focus);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--cc-primary-tint);
+    color: var(--cc-ink);
+  }
+
+  /* Dark sections; the role variables are re-pointed by the token stylesheet. */
+  [data-tone='inverse'] {
+    background-color: var(--cc-surface-inverse);
+    color: var(--cc-ink);
+  }
+
+  /* Full-bleed orange sections (navy ink). */
+  [data-tone='brand'] {
+    background-color: var(--cc-brand);
+    color: var(--cc-ink);
+  }
+
+  [data-tone='paper'] {
+    color: var(--cc-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
